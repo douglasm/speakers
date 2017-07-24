@@ -1,0 +1,123 @@
+$primary-color: #333;
+$back-colour : #f2f2f2;
+$back-colour-light : #ffffff;
+$top-background-color : #143d64;
+$navy-blue : #143d64;
+$nav-text-color : #F5F5F5;
+$interests-text-color : #F5F5F5;
+$interests-back-color : #8e8e8e;
+$py-menu-background: #675E50;
+$py-menuclass-back: #BFD1D6;
+$new-menu-background: #675E50;
+$new-menu-textcolor: #675E50;
+
+@import 'amazium';
+@import 'base';
+@import 'menu';
+
+ul, menu, dir {
+    display: block;
+    list-style-type: disc;
+    -webkit-margin-before: 0.5em;
+    -webkit-margin-after: 0.5em;
+    -webkit-margin-start: 0px;
+    -webkit-margin-end: 0px;
+    -webkit-padding-start: 10px;
+}
+
+.error {
+  font-weight: bold;
+  color: red;
+}
+
+.ta2 {
+    font-family:sans-serif;
+    font-size:1em;
+    width:90%;
+}
+
+.tagcheck {
+    span {
+        width: 20em;
+    }
+}
+
+fieldset.group  { 
+    margin: 0; 
+    padding: 0; 
+    margin-top: .75em; 
+    margin-bottom: 1.25em; 
+    padding: 0;
+
+    legend { 
+        margin: 0; 
+        padding: 0; 
+        font-weight: bold; 
+        margin-left: 0px;
+        margin-bottom: .5em; 
+        font-size: 100%; 
+        color: black; 
+    }
+
+    ul.checkbox  {
+        margin: 0;
+        padding: 0;
+        margin-left: 0px;
+        list-style: none;
+
+        li {
+            border: 1px transparent solid;
+            display:inline-block;
+            width:15em;
+
+            input {
+                margin-right: .25em;
+            }
+        }
+
+        li:hover,
+        li.focus  {
+            background-color: lightyellow;
+            border: 1px gray solid;
+            width: 15em;
+        }
+    }
+}
+
+// fieldset.group legend { 
+//   margin: 0; 
+//   padding: 0; 
+//   font-weight: bold; 
+//   margin-left: 20px; 
+//   font-size: 100%; 
+//   color: black; 
+// } 
+
+// ul.checkbox  { 
+//   margin: 0; 
+//   padding: 0; 
+//   margin-left: 20px; 
+//   list-style: none; 
+// } 
+
+// ul.checkbox li input { 
+//   margin-right: .25em; 
+// } 
+
+// ul.checkbox li { 
+//   border: 1px transparent solid; 
+//   display:inline-block;
+//   width:12em;
+// } 
+
+ul.checkbox li label { 
+  margin-left: 10px; 
+} 
+// ul.checkbox li:hover, 
+// ul.checkbox li.focus  { 
+//   background-color: lightyellow; 
+//   border: 1px gray solid; 
+//   width: 12em; 
+// } 
+
+@import 'buttons';

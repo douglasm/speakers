@@ -1,0 +1,77 @@
+{{template "header.html" .Header}}
+
+<body>
+
+{{template "navbar.html" .}}
+
+<div class="row">
+  <div class="grid_12">
+    <div class="row">
+      <div class="grid_9">
+        <h5>Your details</h5>
+        {{with .Details}}
+          <strong>Name:</strong><br />
+          <p>{{.Name}}</p>
+          {{if .Group}}
+            <strong>Group Size:</strong><br />
+            <p>{{.Size}}</p>
+            <strong>When you meet:</strong><br />
+            <p>{{.When}}</p>
+          {{end}}
+          <strong>Description:</strong><br />
+          <p>{{.Description}}</p>
+          {{if .Group}}
+          {{else}}
+            <div class="navbuttons">
+              <a href="/talkadd" class="button icon add">Add a talk</a>
+            </div>
+            {{if .HasTalks}}
+              <table>
+              <thead>
+              <th>Talk name</th>
+              <th>Categories</th>
+              <th>Delete</th>
+              </thead>
+              <tbody>
+                {{range $element := .Talks}}
+                  <tr>
+                    <td><a href="/talkedit/{{$element.Number}}">{{$element.Title}}</a></td>
+                    <td>{{$element.Topics}}</td>
+                    <td><a href="/talkdelete/{{$element.Number}}">Delete</a></td>
+                  </tr>
+                {{end}}
+              </tbody>
+              </table>
+            {{else}}
+              <p></p>
+              <p>You have not listed any talks yet.</p>
+            {{end}}
+          {{end}}
+
+          <fieldset class="group">
+            <legend>
+            {{if .Group}}
+              <strong>Where your group meets:</strong>
+            {{else}}
+              Locations you can talk:
+            {{end}}
+            </legend> 
+            <ul class="checkbox"> 
+              {{range  $elem := .Places}}
+                <li>{{$elem}}</li>
+              {{end}}
+            </ul> 
+          </fieldset>
+
+        {{end}}
+
+        <div class="navbuttons">
+          <a href="/useredit" class="button icon edit">Edit profile</a>
+        </div>
+      </div>  <!-- end of grid_9 -->
+    </div>  <!-- end of row -->
+  </div>  <!-- end of grid_12 -->
+</div>  <!-- end of row -->
+</body>
+
+</html>

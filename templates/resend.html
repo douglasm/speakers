@@ -1,0 +1,19 @@
+{{template "header.html" .Header}}
+
+<body>
+  {{template "navbar.html" .}}
+  <div class="row">
+    <div class="grid_8">
+      <h5>resend verification E-Mail</h5>
+      {{template "error.html" .}}
+      <p>Please enter your e-mail address.</p>
+      <form method="post" class="login_form" action="/resend" method="post">
+        <p><input type="email" name="email" autofocus="autofocus" placeholder="E-Mail address" value="{{.EMail}}" size="30"></p>
+        <input type="hidden" name="checkfield" value="{{.Checkfield}}">
+        <input name="commit" type="submit" value="Send E-Mail">
+      </form>
+    </div>  <!-- end of grid_8 -->
+  </div>  <!-- end of row -->
+</body>
+
+</html>

@@ -1,0 +1,36 @@
+{{template "header.html" .Header}}
+
+<body>
+
+  {{template "navbar.html" .}}
+
+  <div class="row">
+    <div class="grid_8">
+      <h5>Reset your password</h5>
+      {{template "error.html" .}}
+      <p>Please enter your e-mail address and your new password.</p>
+      <form method="post" class='login_form' action="/newpassword" method="post">
+        <p><input type="email" name="email" autofocus="autofocus" placeholder="Email" value="{{.Details.Email}}" size="30"></p>
+        <p><input type="text" name="password1" id="pwd0" placeholder="Password" value="{{.Details.PassWord2}}" size="30">
+        <a href="#" onclick="toggle_password('pwd0', 'pwd1');" id="showhide">Hide password</a></p>
+        <p>
+          <input type="text" name="password2" id="pwd1" placeholder="Password Again" value="{{.Details.PassWord2}}" size="30">
+        </p>
+        <p>
+          <input type="checkbox" name="remember" {{if .Details.Remember}} checked="checked"{{end}}>Remember Me (for 30 days)
+        </p>
+        <input type="hidden" name="checkfield" value="{{.Details.Checkfield}}">
+        <input type="hidden" name="resetcode" value="{{.Details.Code}}">
+        <input name="commit" type="submit" value="Save">
+      </form>
+      <br />
+      <p>
+        Passwords can be any mixture of ASCII and Unicode, you can even use emojis. An ASCII only password must be at
+        least 10 characters and a Unicode/Emoji one must be at least 6 characters. You can mix the two. A password
+        cannot be an anagram of your e-mail address or an e-mail address.
+      </p>
+    </div>  <!-- end of grid_8 -->
+  </div>  <!-- end of row -->
+</body>
+
+</html>

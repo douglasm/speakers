@@ -1,0 +1,50 @@
+{{template "header.html" .Header}}
+
+<body>
+
+{{template "navbar.html" .}}
+
+<div class="row">
+  <div class="grid_12">
+    <h4>Edit your details</h4>
+    {{template "error.html" .}}
+    <form method="post" class='login_form' action="/useredit" method="post">
+      <p>
+        <strong>Your Name:</strong><br />
+        <span><input type="text" name="name" placeholder="Name" value="{{.Details.Name}}" size="40"></span>
+      </p>
+      <p>
+        <strong>E Mail address:</strong><br />
+        <span><input type="email" name="email" placeholder="E Mail" value="{{.Details.EMail}}" size="40"></span>
+      </p>
+      <p>
+        <strong>Backup E Mail address:</strong><br />
+        <span><input type="email" name="backup" placeholder="Backup E Mail" value="{{.Details.EMailBackup}}" size="40"></span>
+      </p>
+      <p>
+        <strong>Description:</strong> group interests<br />
+        <textarea class="ta2" name="desc" rows="8" placeholder="Description">{{.Details.Description}}</textarea>
+      </p>
+
+      <fieldset class="group">
+        <legend>
+          Where you can speak:
+        </legend> 
+        <ul class="checkbox"> 
+          {{range $index, $elem := .Details.PlaceCheck}}
+            <li><input type="checkbox" name="places" value="{{$elem.Title}}" {{if $elem.Selected}}checked{{end}}>&nbsp;{{$elem.Title}}</li>
+          {{end}}
+        </ul>
+      </fieldset>
+
+      <input type="hidden" name="group" value="{{.Details.Group}}">
+      <input type="hidden" name="number" value="{{.Details.Number}}">
+      <input type="hidden" name="checkfield" value="{{.Details.Checkfield}}">
+      <input type="submit" value="Save">
+    </form>
+  </div>  <!-- end of grid_12 -->
+</div>  <!-- end of row -->
+
+</body>
+
+</html>

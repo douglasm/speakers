@@ -1,0 +1,22 @@
+{{template "header.html" .Header}}
+
+<body>
+
+  {{template "navbar.html" .}}
+
+  <div class="row">
+    <div class="grid_8">
+      <h5>Reset your password</h5>
+      {{template "error.html" .}}
+      <p>Please enter your e-mail address and a reset code will be sent to it.</p>
+      <form method="post" class='login_form' action="/passwordreset" method="post">
+        <p><input type="email" name="email" autofocus="autofocus" placeholder="Email" value="{{.Details.Email}}" size="30"></p>
+        <input type="hidden" name="checkfield" value="{{.Details.Checkfield}}">
+        <input name="commit" type="submit" value="Reset">
+      </form>
+      <br />
+    </div>  <!-- end of grid_8 -->
+  </div>  <!-- end of row -->
+</body>
+
+</html>

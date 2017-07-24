@@ -1,0 +1,24 @@
+{{template "header.html" .Header}}
+
+
+<body>
+  {{template "navbar.html" .}}
+  <div class="row">
+    <div class="grid_8">
+      <h5>Activate account</h5>
+      {{template "error.html" .}}
+      <p>Please enter the activation code you received in the signup e-mail.</p>
+      <form method="post" class="login_form" action="/activate">
+        <p><input type="text" name="code" autofocus="autofocus" placeholder="Activation code" value="{{.Code}}" size="30"></p>
+        <input type="hidden" name="checkfield" value="{{.Checkfield}}">
+        <input name="commit" type="submit" value="Activate">
+      </form>
+      <br />
+      <div class="navbuttons">
+        <a href="/resend" class="button icon mail">Resend E Mail</a>
+      </div>
+    </div>  <!-- end of grid_8 -->
+  </div>  <!-- end of row -->
+</body>
+
+</html>

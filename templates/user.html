@@ -1,0 +1,74 @@
+{{template "header.html" .Header}}
+
+<body>
+
+{{template "navbar.html" .}}
+
+<div class="row">
+  <div class="grid_12">
+    <div class="row">
+      <div class="grid_9">
+        {{with .Details}}
+          <h5>{{.Name}}</h5>
+          {{if .Group}}
+            <strong>Group Size:</strong><br />
+            <p>{{.Size}}</p>
+            <strong>When you meet:</strong><br />
+            <p>{{.When}}</p>
+          {{end}}
+          <strong>Description:</strong><br />
+          <p>{{.Description}}</p>
+          {{if .Group}}
+          {{else}}
+            {{if .HasTalks}}
+              <table>
+              <thead>
+              <th>Talk name</th>
+              <th>Categories</th>
+              </thead>
+              <tbody>
+                {{range $element := .Talks}}
+                  <tr>
+                    <td><a href="/{{$element.Link}}/{{$element.Number}}">{{$element.Title}}</a></td>
+                    <td>{{$element.Topics}}</td>
+                  </tr>
+                {{end}}
+              </tbody>
+              </table>
+            {{else}}
+              <p></p>
+              <p>No talks listed.</p>
+            {{end}}
+          {{end}}
+
+          <fieldset class="group">
+            <legend>
+              <strong>
+                {{if .Group}}
+                  Locations:
+                {{else}}
+                  Locations:
+                {{end}}
+              </strong>
+            </legend> 
+            <ul class="checkbox"> 
+              {{range  $elem := .Places}}
+                <li>{{$elem}}</li>
+              {{end}}
+            </ul> 
+          </fieldset>
+
+        {{end}}
+
+        {{if .Header.Loggedin}}
+          <div class="navbuttons">
+            <a href="/message/{{.Details.UserNumber}}" class="button icon edit">Send a message</a>
+          </div>
+        {{end}}
+      </div>  <!-- end of grid_9 -->
+    </div>  <!-- end of row -->
+  </div>  <!-- end of grid_12 -->
+</div>  <!-- end of row -->
+</body>
+
+</html>

@@ -1,0 +1,34 @@
+{{template "header.html" .Header}}
+
+<body>
+
+{{template "navbar.html" .}}
+
+<div class="row">
+  <div class="grid_9">
+    <h4>Signup to {{.Header.Name}}</h4>
+    {{template "error.html" .}}
+    <form method="post" class='login_form' action="/signup" method="post">
+      <p><input type="email" name="email" placeholder="E Mail" value="{{.Details.EMail}}" size="30"></p>
+      <p>
+        <input type="text" name="password" id="pwd0" placeholder="Password" value="{{.Details.Password}}" size="30">
+        <a href="#" onclick="toggle_password('pwd0', 'pwd1');" id="showhide">Hide password</a>
+      </p>
+      <p><input type="text" name="passagain" id="pwd1" placeholder="Password again" value="{{.Details.PasswordAgain}}" size="30"></p>
+      <p>If you are a group looking for speakers check Group profile box.</p>
+      <p><input type="checkbox" name="group" {{if .Details.Group}} checked="checked"{{end}}>Group profile</p>
+      <input type="hidden" name="checkfield" value="{{.Details.Checkfield}}">
+      <input type="submit" value="Signup">
+    </form>
+    <br />
+    <p>
+      Passwords can be any mixture of ASCII and Unicode, you can even use emojis. An ASCII only password must be at
+      least 10 characters and a Unicode/Emoji one must be at least 6 characters. You can mix the two. A password
+      cannot be an anagram of your e-mail address or an e-mail address.
+    </p>
+  </div>  <!-- end of grid_12 -->
+</div>  <!-- end of row -->
+
+</body>
+
+</html>

@@ -1,0 +1,25 @@
+{{template "header.html" .Header}}
+
+<body>
+
+{{template "navbar.html" .}}
+
+<div class="row">
+  <div class="grid_12">
+    <h5>View talk</h5>
+      {{with .Details}}
+      </p><strong>Title:</strong></p> 
+      <p>{{.Title}}</p>
+      </p><strong>Speaker:</strong></p> 
+      <p>{{.Speaker}}</p>
+      </p><strong>Description:</strong></p> 
+      <p>{{.Description}}</p>
+      </p><strong>Talk categories:</strong></p> 
+      <p>{{.Topics}}</p>
+    {{end}}
+  </div>  <!-- end of grid_12 -->
+</div>  <!-- end of row -->
+
+</body>
+
+</html>

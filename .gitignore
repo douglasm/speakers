@@ -1,0 +1,7 @@
+logs/
+speakers.cfg
+.sass-cache/
+testdata.go
+gorun.sh
+builddeployment.sh
+main

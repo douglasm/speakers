@@ -1,0 +1,31 @@
+{{template "header.html" .Header}}
+
+<body>
+
+  {{template "navbar.html" .}}
+
+  <div class="row">
+    <div class="grid_8">
+      <h4>Login</h4>
+      {{template "error.html" .}}
+      <form method="post" class='login_form' action="/login" method="post">
+        {{with .Details}}
+          <span><input type="text" name="email" autofocus="autofocus" placeholder="E Mail" value="{{.EMail}}" size="30"></span>
+          <p></p>
+          <p>
+            <input type="text" name="password" id="pwd0" placeholder="Password" value="" size="30">
+            <a href="#" onclick="toggle_password('pwd0', '');" id="showhide">Hide password</a>
+          </p>
+          <p>&nbsp;&nbsp;<a class="resetlink" title="Use this link to send a reset e-mail if you have forgotten your password" href="/passwordreset">Lost password</a></p>
+          <p>
+            <input type="checkbox" name="remember" {{if .Remember}} checked="checked"{{end}}>Remember Me (for 30 days)
+          </p>
+          <input type="hidden" name="checkfield" value="{{.Checkfield}}">
+          <input name="commit" type="submit" value="Login">
+        {{end}}
+      </form>
+    </div>  <!-- end of grid_8 -->
+  </div>  <!-- end of row -->
+</body>
+
+</html>

@@ -1,0 +1,32 @@
+{{template "header.html" .Header}}
+
+<body>
+
+{{template "navbar.html" .}}
+
+<div class="row">
+  <div class="grid_12">
+    <div class="row">
+      <div class="grid_9">
+        <h5>{{.Header.Name}}</h5>
+        <p>
+          Are you looking for a speaker for a tech event, or want to speak at a tech event?
+        </p>
+        <p>
+          There are currently {{.Details.Talks}} talks from {{.Details.Speakers}} speakers, who
+          can speak at {{.Details.Locations}} locations and {{.Details.Groups}} groups wanting speakers
+          at {{.Details.Places}} places.
+        </p>
+      </div>  <!-- end of grid_9 -->
+
+      {{if .Header.Loggedin}}
+      {{else}}
+        {{template "logininsert.html"}}
+      {{end}}
+
+    </div>  <!-- end of row -->
+  </div>  <!-- end of grid_12 -->
+</div>  <!-- end of row -->
+</body>
+
+</html>

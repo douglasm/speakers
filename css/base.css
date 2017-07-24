@@ -1,0 +1,855 @@
+/*
+* Amazium (http://www.amazium.co.uk)
+* Copyright 2010 - 2013, Mike Ballan
+* Licensed under MIT (https://github.com/OwlyStuff/Amazium/blob/master/LICENSE)
+*/
+/***********************************************
+Reset & Basics
+***********************************************/
+/* line 24, ../scss/base.scss */
+html, body, div, span, applet,
+object, iframe, h1, h2, h3, h4,
+h5, h6, p, blockquote, pre, a,
+abbr, acronym, address, big, cite,
+code, del, dfn, em, img, ins, kbd,
+q, s, samp, small, strike, strong,
+sub, sup, tt, var, b, u, i, center,
+dl, dt, dd, ol, ul, li, fieldset,
+form, label, legend, table, caption,
+tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details,
+embed, figure, figcaption, footer,
+header, hgroup, menu, nav, output,
+ruby, section, summary, time, mark,
+audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+}
+
+/* line 28, ../scss/base.scss */
+article, aside, details, figcaption,
+figure, footer, header, hgroup, menu,
+nav, section {
+  display: block;
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+}
+
+/* line 30, ../scss/base.scss */
+blockquote, q {
+  quotes: none;
+}
+
+/* line 32, ../scss/base.scss */
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none;
+}
+
+/* line 34, ../scss/base.scss */
+html {
+  overflow-y: scroll;
+  overflow: -moz-scrollbars-vertical;
+}
+
+/* line 35, ../scss/base.scss */
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #FFF;
+  font-family: sans-serif;
+  font-size: 1em;
+  line-height: 1.4em;
+  color: #333;
+}
+
+/***********************************************
+Typography
+***********************************************/
+/* line 41, ../scss/base.scss */
+h1, h2, h3, h4, h5, h6 {
+  margin: 0 0 10px;
+  padding: 0;
+  color: #333;
+  font-weight: normal;
+}
+
+/* line 42, ../scss/base.scss */
+h1 a, h2 a, h3 a, h4 a, h5 a, h6 a {
+  font-weight: inherit;
+  color: inherit;
+}
+
+/* line 43, ../scss/base.scss */
+h1 {
+  font-size: 5em;
+  line-height: 6em;
+}
+
+/* line 44, ../scss/base.scss */
+h2 {
+  font-size: 4em;
+  line-height: 4.8em;
+}
+
+/* line 45, ../scss/base.scss */
+h3 {
+  font-size: 3em;
+  line-height: 3.6em;
+}
+
+/* line 46, ../scss/base.scss */
+h4 {
+  font-size: 2em;
+  line-height: 2.4em;
+}
+
+/* line 47, ../scss/base.scss */
+h5 {
+  font-size: 1.5em;
+  line-height: 1.8em;
+}
+
+/* line 48, ../scss/base.scss */
+h6 {
+  font-size: 1.1em;
+  line-height: 1.2em;
+}
+
+/* line 50, ../scss/base.scss */
+p {
+  margin: 0 0 20px 0;
+  padding: 0;
+  font-size: 1em;
+  line-height: 1.2em;
+}
+
+/* line 52, ../scss/base.scss */
+b, strong {
+  font-weight: bold;
+}
+
+/* line 53, ../scss/base.scss */
+em {
+  font-style: italic;
+}
+
+/* line 54, ../scss/base.scss */
+small {
+  font-size: 11px;
+}
+
+/* line 56, ../scss/base.scss */
+sup, sub {
+  height: 0;
+  line-height: 0;
+  vertical-align: baseline;
+  _vertical-align: bottom;
+  position: relative;
+  font-size: 80%;
+}
+
+/* line 57, ../scss/base.scss */
+sup {
+  top: -5px;
+}
+
+/* line 58, ../scss/base.scss */
+sub {
+  bottom: -5px;
+}
+
+/* line 60, ../scss/base.scss */
+pre code {
+  margin: 16px 0 26px 0;
+  padding: 16px;
+  font-family: 'Consolas', Courier, monospace;
+  font-size: 1em;
+  line-height: 1.2em;
+  color: #F1F1F1;
+  display: block;
+  background-color: #111;
+  border: 1px solid #111;
+}
+
+/* line 63, ../scss/base.scss */
+abbr[title],
+abbr[data-original-title] {
+  border-bottom: 1px dotted #999999;
+  cursor: help;
+}
+
+/* line 64, ../scss/base.scss */
+address {
+  margin: 26px 0;
+  padding: 0;
+  display: block;
+  font-style: normal;
+  line-height: 1.5em;
+}
+
+/* line 66, ../scss/base.scss */
+hr {
+  margin: 20px 0;
+  padding: 0;
+  border: 0;
+  border-top: 1px solid #D6D6D6;
+  height: 1px;
+  width: 100%;
+  text-align: left;
+  display: block;
+}
+
+/***********************************************
+Lists
+***********************************************/
+/* line 72, ../scss/base.scss */
+ul, ol {
+  margin: 20px 0 30px 20px;
+  padding: 0;
+  display: block;
+}
+
+/* line 73, ../scss/base.scss */
+ol {
+  list-style: decimal;
+}
+
+/* line 74, ../scss/base.scss */
+li {
+  margin: 0 0 10px 0;
+  padding: 0;
+}
+
+/* line 76, ../scss/base.scss */
+ul ul, ul ol, ol ol, ol ul {
+  margin: 10px 0 20px 20px;
+}
+
+/* line 79, ../scss/base.scss */
+ul.square, ul.square ul,
+ul.circle ul.square {
+  list-style: square inside;
+}
+
+/* line 81, ../scss/base.scss */
+ul.circle, ul.circle ul,
+ul.square ul.circle {
+  list-style: circle inside;
+}
+
+/* line 82, ../scss/base.scss */
+ul.disc, ul.disc ul {
+  list-style: disc inside;
+}
+
+/* line 85, ../scss/base.scss */
+ul.square li,
+ul.circle li,
+ul.disc li {
+  margin: 0 0 5px 18px;
+  padding: 0;
+  line-height: 18px;
+  background: none;
+}
+
+/* line 87, ../scss/base.scss */
+dl {
+  margin: 16px 0 26px 0;
+  padding: 0;
+}
+
+/* line 88, ../scss/base.scss */
+dt {
+  margin: 0 0 10px 0;
+  font-size: 1.5em;
+  line-height: 1.8em;
+  font-weight: bold;
+}
+
+/* line 89, ../scss/base.scss */
+dd {
+  margin: 0 0 10px 10px;
+}
+
+/***********************************************
+Blockquotes
+***********************************************/
+/* line 95, ../scss/base.scss */
+figure {
+  margin: 16px 0 26px 0;
+  padding: 0;
+}
+
+/* line 96, ../scss/base.scss */
+blockquote {
+  margin: 0;
+  padding: 0 0 0 10px;
+  border-left: 1px solid #747474;
+}
+
+/* line 97, ../scss/base.scss */
+blockquote p {
+  margin: 0;
+  padding: 0;
+  color: #777;
+  font-style: italic;
+}
+
+/* line 98, ../scss/base.scss */
+blockquote p:before {
+  content: "\201C";
+}
+
+/* line 99, ../scss/base.scss */
+blockquote p:after {
+  content: "\201D";
+}
+
+/* line 100, ../scss/base.scss */
+figcaption:before {
+  content: "\2014 \202F";
+}
+
+/* line 101, ../scss/base.scss */
+figcaption {
+  margin: 6px 0 0 0;
+  padding: 0;
+  font-size: 11px;
+}
+
+/***********************************************
+Links
+***********************************************/
+/* line 107, ../scss/base.scss */
+a {
+  color: #000;
+  text-decoration: underline;
+  outline: 0;
+  transition: all .1s linear 0s;
+  -moz-transition: all .1s linear 0s;
+  -webkit-transition: all .1s linear 0s;
+  -o-transition: all .1s linear 0s;
+}
+
+/* line 108, ../scss/base.scss */
+a:focus {
+  outline: none;
+  -moz-outline-style: none;
+}
+
+/***********************************************
+Images, iFrames & Videos
+***********************************************/
+/* line 114, ../scss/base.scss */
+img {
+  border: 0;
+  vertical-align: middle;
+  -ms-interpolation-mode: bicubic;
+}
+
+/* line 115, ../scss/base.scss */
+.img-left {
+  float: left;
+  margin: 0 30px 30px 0;
+  border: none;
+}
+
+/* line 116, ../scss/base.scss */
+.img-right {
+  float: right;
+  margin: 0 0 30px 30px;
+  border: none;
+}
+
+/* line 117, ../scss/base.scss */
+.img-max {
+  margin: 0 0 30px;
+  width: 100%;
+  height: auto;
+}
+
+/* line 119, ../scss/base.scss */
+.media {
+  position: relative;
+  margin: 0 0 15px 0;
+  padding-bottom: 51%;
+  padding-top: 30px;
+  height: 0;
+  overflow: hidden;
+  border: 1px solid #ccc;
+}
+
+/* line 122, ../scss/base.scss */
+.media iframe,
+.media object,
+.media embed {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+/***********************************************
+Tables
+***********************************************/
+/* line 128, ../scss/base.scss */
+table {
+  margin: 20px 0 40px 0;
+  width: 100%;
+  overflow: hidden;
+  font-size: 1.1em;
+  line-height: 1.25em;
+  border-bottom: 1px solid #D6D6D6;
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* line 129, ../scss/base.scss */
+caption {
+  margin: 0 0 10px;
+}
+
+/* line 131, ../scss/base.scss */
+tr {
+  background-color: #FFF;
+  transition: all .1s linear 0s;
+  -moz-transition: all .1s linear 0s;
+  -webkit-transition: all .1s linear 0s;
+  -o-transition: all .1s linear 0s;
+}
+
+/* line 132, ../scss/base.scss */
+tr:hover {
+  background-color: #F1F1F1;
+  transition: all .1s linear 0s;
+  -moz-transition: all .1s linear 0s;
+  -webkit-transition: all .1s linear 0s;
+  -o-transition: all .1s linear 0s;
+}
+
+/* line 133, ../scss/base.scss */
+tr.even {
+  background-color: #FFF;
+}
+
+/* line 134, ../scss/base.scss */
+tr.odd {
+  background-color: #F1F1F1;
+}
+
+/* line 136, ../scss/base.scss */
+th {
+  padding: 8px;
+  background-color: #F1F1F1;
+  color: #222;
+  font-weight: bold;
+  border: none;
+  border-bottom: 3px solid #D6D6D6;
+  text-align: left;
+  white-space: nowrap;
+}
+
+/* line 138, ../scss/base.scss */
+td {
+  padding: 8px;
+  min-width: 100px;
+  background-color: transparent;
+  color: #666;
+  border: none;
+  border-top: 1px solid #D6D6D6;
+}
+
+/* line 139, ../scss/base.scss */
+td.highlight {
+  padding: 11px 8px;
+  color: #EEE;
+  font-weight: bold;
+  display: block;
+  font-size: inherit;
+  border: none;
+  background-color: #333;
+}
+
+/***********************************************
+Buttons
+***********************************************/
+/* line 145, ../scss/base.scss */
+.btn, button {
+  margin: 0 5px 5px 0;
+  padding: 0 28px;
+  display: inline-block;
+  color: #FFF;
+  border: 1px solid #000;
+  background-color: #000;
+  font-size: 1.2em;
+  line-height: 2em;
+  text-decoration: none;
+  cursor: pointer;
+  transition: all .1s linear 0s;
+  -moz-transition: all .1s linear 0s;
+  -webkit-transition: all .1s linear 0s;
+  -o-transition: all .1s linear 0s;
+}
+
+/* line 146, ../scss/base.scss */
+.btn:hover, button:hover {
+  border: 1px solid #CCC;
+  background-color: #FFF;
+  color: #333;
+}
+
+/* line 148, ../scss/base.scss */
+.small {
+  padding: 2px 10px;
+  font-size: 1em;
+  line-height: 1.2em;
+}
+
+/* line 150, ../scss/base.scss */
+.btn.white {
+  border-color: #CCC;
+  background-color: #FFF;
+  color: #333;
+}
+
+/* line 151, ../scss/base.scss */
+.btn.white:hover {
+  border-color: #000;
+  background-color: #000;
+  color: #FFF;
+}
+
+/* Green */
+/* line 154, ../scss/base.scss */
+.btn.success {
+  border-color: #2ECC71;
+  background-color: #2ECC71;
+  color: #FFF;
+}
+
+/* line 155, ../scss/base.scss */
+.btn.success:hover {
+  border-color: #25A35A;
+  background-color: #25A35A;
+  color: #FFF;
+}
+
+/* Blue */
+/* line 158, ../scss/base.scss */
+.btn.info {
+  border-color: #3498DB;
+  background-color: #3498DB;
+  color: #FFF;
+}
+
+/* line 159, ../scss/base.scss */
+.btn.info:hover {
+  border-color: #2A7AAF;
+  background-color: #2A7AAF;
+  color: #FFF;
+}
+
+/* Amber */
+/* line 162, ../scss/base.scss */
+.btn.warning {
+  border-color: #FA9300;
+  background-color: #FA9300;
+  color: #FFF;
+}
+
+/* line 163, ../scss/base.scss */
+.btn.warning:hover {
+  border-color: #B46F29;
+  background-color: #B46F29;
+  color: #FFF;
+}
+
+/* Red */
+/* line 166, ../scss/base.scss */
+.btn.error {
+  border-color: #E74C3C;
+  background-color: #E74C3C;
+  color: #FFF;
+}
+
+/* line 167, ../scss/base.scss */
+.btn.error:hover {
+  border-color: #B93D30;
+  background-color: #B93D30;
+  color: #FFF;
+}
+
+/***********************************************
+Colors
+***********************************************/
+/* line 173, ../scss/base.scss */
+.txt-success {
+  color: #2ECC71;
+}
+
+/* line 174, ../scss/base.scss */
+.bg-success {
+  background-color: #2ECC71;
+}
+
+/* line 175, ../scss/base.scss */
+.border-success {
+  border-color: #2ECC71;
+}
+
+/* line 177, ../scss/base.scss */
+.txt-info {
+  color: #3498DB;
+}
+
+/* line 178, ../scss/base.scss */
+.bg-info {
+  background-color: #3498DB;
+}
+
+/* line 179, ../scss/base.scss */
+.border-info {
+  border-color: #3498DB;
+}
+
+/* line 181, ../scss/base.scss */
+.txt-warning {
+  color: #FA9300;
+}
+
+/* line 182, ../scss/base.scss */
+.bg-warning {
+  background-color: #FA9300;
+}
+
+/* line 183, ../scss/base.scss */
+.border-warning {
+  border-color: #FA9300;
+}
+
+/* line 185, ../scss/base.scss */
+.txt-error {
+  color: #E74C3C;
+}
+
+/* line 186, ../scss/base.scss */
+.bg-error {
+  background-color: #E74C3C;
+}
+
+/* line 187, ../scss/base.scss */
+.border-error {
+  border-color: #E74C3C;
+}
+
+/***********************************************
+Utility Classes
+***********************************************/
+/* line 193, ../scss/base.scss */
+.float-clear {
+  clear: both;
+}
+
+/* line 194, ../scss/base.scss */
+.float-left {
+  float: left;
+}
+
+/* line 195, ../scss/base.scss */
+.float-right {
+  float: right;
+}
+
+/* line 197, ../scss/base.scss */
+.txt-left {
+  text-align: left;
+}
+
+/* line 198, ../scss/base.scss */
+.txt-right {
+  text-align: right;
+}
+
+/* line 199, ../scss/base.scss */
+.txt-center {
+  text-align: center;
+}
+
+/* line 200, ../scss/base.scss */
+.txt-justify {
+  text-align: justify;
+}
+
+/* line 202, ../scss/base.scss */
+.txt-normal {
+  font-weight: normal;
+}
+
+/* line 203, ../scss/base.scss */
+.txt-bold {
+  font-weight: bold;
+}
+
+/* line 204, ../scss/base.scss */
+.txt-italic {
+  font-style: italic;
+}
+
+/* line 205, ../scss/base.scss */
+.txt-underline {
+  border-bottom: 1px solid;
+}
+
+/* line 206, ../scss/base.scss */
+.txt-highlight {
+  padding: 4px 7px 4px;
+  color: #000;
+  line-height: 19px;
+  display: inline-block;
+  background: #00DEFF;
+  font-weight: bold;
+}
+
+/* line 207, ../scss/base.scss */
+.txt-intro {
+  font-size: 130%;
+  line-height: 130%;
+}
+
+/* line 208, ../scss/base.scss */
+.txt-big {
+  color: #A2BD30;
+  font-weight: bold;
+  line-height: 26px;
+}
+
+/* line 210, ../scss/base.scss */
+.rounded {
+  border-radius: 50%;
+}
+
+/* line 211, ../scss/base.scss */
+.radius {
+  border-radius: 3px;
+}
+
+/* line 213, ../scss/base.scss */
+.no-padding {
+  padding: 0;
+}
+
+/* line 214, ../scss/base.scss */
+.no-indent {
+  margin-left: 0;
+  padding-left: 0;
+}
+
+/* line 215, ../scss/base.scss */
+.no-bullet {
+  list-style: none;
+  list-style-image: none;
+}
+
+/* line 216, ../scss/base.scss */
+.no-styling {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+/* line 218, ../scss/base.scss */
+.inline {
+  display: inline;
+}
+
+/* line 219, ../scss/base.scss */
+.block, .show {
+  display: block;
+}
+
+/* line 220, ../scss/base.scss */
+.hidden, .hide {
+  display: none;
+}
+
+/* line 222, ../scss/base.scss */
+.invisable {
+  display: none;
+  visibility: hidden;
+}
+
+/* line 223, ../scss/base.scss */
+.visable {
+  display: block;
+  visibility: visible;
+}
+
+/***********************************************
+Disable Chrome blue border
+***********************************************/
+/* line 229, ../scss/base.scss */
+input:focus, select:focus,
+textarea:focus, button:focus {
+  outline: none;
+}
+
+/***********************************************
+Mobile (portrait 300px)
+***********************************************/
+@media only screen and (max-width: 767px) {
+  /* line 237, ../scss/base.scss */
+  table, tbody, tr, th, td {
+    border: 0;
+    display: block;
+    padding: 3px 0;
+    text-align: left;
+    white-space: normal;
+  }
+
+  /* line 238, ../scss/base.scss */
+  table {
+    padding: 0;
+    border-top: 1px solid #D6D6D6;
+    table-layout: fixed;
+  }
+
+  /* line 239, ../scss/base.scss */
+  tr {
+    margin: 5px 0;
+    padding: 0 0 6px;
+    border-bottom: 1px solid #D6D6D6;
+  }
+
+  /* line 240, ../scss/base.scss */
+  tr:hover {
+    background-color: transparent;
+  }
+
+  /* line 241, ../scss/base.scss */
+  tr:first-child, th, td:empty {
+    display: none;
+    visibility: hidden;
+  }
+
+  /* line 242, ../scss/base.scss */
+  td:first-child {
+    font-weight: bold;
+  }
+
+  /* line 243, ../scss/base.scss */
+  th[data-title]:before, td[data-title]:before {
+    content: attr(data-title) ":\00A0";
+    font-weight: bold;
+  }
+}

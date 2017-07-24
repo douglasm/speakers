@@ -1,0 +1,37 @@
+{{template "header.html" .Header}}
+
+<body>
+
+{{template "navbar.html" .}}
+
+<div class="row">
+  <div class="grid_12">
+    <div class="row">
+      <div class="grid_9">
+        <h5>List of groups</h5>
+        <table>
+          <thead>
+            <th>Group</th>
+            <th>Size</th>
+            <th>Places</th>
+          </thead>
+          <tbody id="tab">
+            {{.Details.Speakers}}
+          </tbody>
+        </table>
+      </div>  <!-- end of grid_9 -->
+
+      <div class="grid_3">
+        <h6><strong>Places</strong></h6>
+          <div id="place">
+          {{range $elem := .Details.Places}}
+            <input type="checkbox" name="places" id="{{$elem.Value}}" onclick="getCheckedBoxes('/revisegroup')" {{if $elem.Selected}}checked{{end}}>&nbsp;{{$elem.Title}}<br />
+          {{end}}
+        </div>
+      </div>  <!-- end of grid_3 -->
+    </div>  <!-- end of row -->
+  </div>  <!-- end of grid_12 -->
+</div>  <!-- end of row -->
+</body>
+
+</html>

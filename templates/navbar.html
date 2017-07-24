@@ -1,0 +1,22 @@
+<div class="row">
+  <div class="grid_12">
+    <nav class="nav">
+      <ul>
+        <li class="current"><a href="/talks">Talks</a></li>
+        <li><a href="/speakers">Speakers</a></li>
+        <li><a href="/groups">Groups</a></li>
+        {{if .Header.Loggedin}}
+          <li><a href="/details">My details</a></li>
+          {{if .Header.God}}
+            <li><a href="/admin">Admin</a></li>
+          {{end}}
+          <li>&nbsp;&nbsp;</li>
+          <li><a href="/logout">Logout</a></li>
+        {{else}}
+          <li><a href="/login">Login</a></li>
+          <li><a href="/signup">Signup</a></li>
+        {{end}}
+      </ul>
+    </nav>
+  </div>  <!-- end of grid_12 -->
+</div>  <!-- end of row -->

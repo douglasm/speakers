@@ -1,0 +1,36 @@
+{{template "header.html" .Header}}
+
+<body>
+
+{{template "navbar.html" .}}
+
+<div class="row">
+  <div class="grid_12">
+    <h4>{{.Action}}</h4>
+    {{template "error.html" .}}
+    <form method="post" class='login_form' action="/{{.Link}}">
+      {{with .Details}}
+        <p>
+          <span><input type="text" name="title" placeholder="Title" value="{{.Title}}" size="40"></span>
+        </p>
+        <textarea class="ta2" name="desc" rows="8" placeholder="Description">{{.Description}}</textarea>
+        <br />
+        <fieldset class="group"> 
+          <legend>Select talk categories:</legend> 
+          <ul class="checkbox"> 
+            {{range $index, $elem := .TagChecks}}
+              <li><input type="checkbox" name="tags" value="{{$elem.Value}}" {{if $elem.Selected}}checked{{end}}>&nbsp;{{$elem.Tag}}</li>
+            {{end}}
+          </ul> 
+        </fieldset>
+        <input type="hidden" name="checkfield" value="{{.Checkfield}}">
+        <input type="hidden" name="num" value="{{.Num}}">
+        <p><input type="submit" value="Save"></p>
+      {{end}}
+    </form>
+  </div>  <!-- end of grid_12 -->
+</div>  <!-- end of row -->
+
+</body>
+
+</html>
