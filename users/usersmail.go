@@ -2,7 +2,7 @@ package users
 
 import (
 	"fmt"
-	"github.com/mailgun/mailgun-go"
+	"gopkg.in/mailgun/mailgun-go.v1"
 	"log"
 )
 
@@ -14,6 +14,7 @@ func sendActivate(email, code string) {
 	messageText += fmt.Sprintf("%s/activate and enter the code %s.", theLink, code)
 
 	sendAddress := fmt.Sprintf("noreply@%s", domain)
+	fmt.Println(sendAddress)
 
 	mg := mailgun.NewMailgun(mailGunDomain, mailKey, "")
 	m := mg.NewMessage(
@@ -22,6 +23,7 @@ func sendActivate(email, code string) {
 		messageText,
 		email,
 	)
+
 	_, _, err := mg.Send(m)
 	if err != nil {
 		log.Println("Error: send activate", err)
@@ -44,6 +46,7 @@ func sendReset(email, code string) {
 		messageText,
 		email,
 	)
+
 	_, _, err := mg.Send(m)
 	if err != nil {
 		log.Println("Error: send activate", err)

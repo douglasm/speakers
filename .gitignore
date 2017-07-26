@@ -5,3 +5,4 @@ testdata.go
 gorun.sh
 builddeployment.sh
 main
+templates/navbar copy.html

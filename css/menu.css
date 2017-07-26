@@ -1,109 +1,131 @@
 /* nav */
-/* line 2, ../scss/menu.scss */
+/*Strip the ul of padding and list styling*/
+/* line 3, ../scss/menu.scss */
 .nav {
   position: relative;
-  margin: 20px 0;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  min-height: 2.5em;
+  /*Strip the ul of padding and list styling*/
+  /*Create a horizontal list with spacing*/
+  /*Style for menu links*/
+  /*Hover state for top level links*/
+  /*Style for dropdown links*/
+  /*Hover state for dropdown links*/
+  /*Hide dropdown links until they are needed*/
+  /*Make dropdown links vertical*/
+  /*Prevent text wrapping*/
+  /*Display the dropdown on hover*/
+  /*Style 'show menu' label button and hide it by default*/
+  /*Hide checkbox*/
+  /*Show menu when invisible checkbox is checked*/
 }
-/* line 6, ../scss/menu.scss */
+/* line 10, ../scss/menu.scss */
 .nav ul {
+  list-style-type: none;
   margin: 0;
   padding: 0;
-}
-/* line 11, ../scss/menu.scss */
-.nav li {
-  margin: 0 5px 10px 0;
-  padding: 0;
-  list-style: none;
-  display: inline-block;
+  position: absolute;
 }
 /* line 18, ../scss/menu.scss */
-.nav a {
-  padding: 3px 12px;
+.nav li {
+  display: inline-block;
+  float: left;
+  margin-right: 1px;
+}
+/* line 25, ../scss/menu.scss */
+.nav li a {
+  display: block;
+  min-width: 140px;
+  height: 2em;
+  text-align: center;
+  line-height: 2em;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  color: #fff;
+  background: #2f3036;
   text-decoration: none;
-  color: #111;
-  line-height: 100%;
-  font-size: 1.1em;
 }
-/* line 26, ../scss/menu.scss */
-.nav a:hover {
-  color: #999;
+/* line 38, ../scss/menu.scss */
+.nav li:hover a {
+  background: #19c589;
 }
-/* line 30, ../scss/menu.scss */
-.nav .current a {
-  color: #111;
+/* line 43, ../scss/menu.scss */
+.nav li:hover ul a {
+  background: #f3f3f3;
+  color: #2f3036;
+  height: 2em;
+  line-height: 2em;
 }
-/* line 36, ../scss/menu.scss */
-.nav .current a:hover {
-  color: #999;
+/* line 51, ../scss/menu.scss */
+.nav li:hover ul a:hover {
+  background: #19c589;
+  color: #fff;
+}
+/* line 57, ../scss/menu.scss */
+.nav li ul {
+  display: none;
+}
+/* line 62, ../scss/menu.scss */
+.nav li ul li {
+  display: block;
+  float: none;
+}
+/* line 68, ../scss/menu.scss */
+.nav li ul li a {
+  width: auto;
+  min-width: 100px;
+  padding: 0 20px;
+}
+/* line 75, ../scss/menu.scss */
+.nav ul li a:hover + .hidden, .nav .hidden:hover {
+  display: block;
+}
+/* line 80, ../scss/menu.scss */
+.nav .show-menu {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  text-decoration: none;
+  color: #fff;
+  background: #19c589;
+  text-align: center;
+  padding: 10px 0;
+  display: none;
+}
+/* line 91, ../scss/menu.scss */
+.nav input[type=checkbox] {
+  display: none;
+  -webkit-appearance: none;
+}
+/* line 97, ../scss/menu.scss */
+.nav input[type=checkbox]:checked ~ #menu {
+  display: block;
 }
 
-@media screen and (max-width: 600px) {
-  /* line 45, ../scss/menu.scss */
+/*Responsive Styles*/
+@media screen and (max-width: 760px) {
+  /* line 106, ../scss/menu.scss */
   .nav {
     position: relative;
     min-height: 40px;
-    /* on nav hover */
-    /* right nav */
-    /* center nav */
+    /*Make dropdown links appear inline*/
+    /*Create vertical spacing*/
+    /*Make all menu links full width*/
+    /*Display 'show menu' link*/
   }
-  /* line 49, ../scss/menu.scss */
+  /* line 110, ../scss/menu.scss */
   .nav ul {
-    width: 180px;
-    padding: 5px 0;
-    position: absolute;
-    top: 0;
-    left: 0;
-    border: solid 1px #aaa;
-    background: white url(/images/icon-menu.png) no-repeat 10px 11px;
-    border-radius: 5px;
-    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
-  }
-  /* line 61, ../scss/menu.scss */
-  .nav li {
+    position: static;
     display: none;
-    /* hide all <li> items */
-    margin: 0;
   }
-  /* line 66, ../scss/menu.scss */
-  .nav a {
+  /* line 115, ../scss/menu.scss */
+  .nav li {
+    margin-bottom: 1px;
+  }
+  /* line 119, ../scss/menu.scss */
+  .nav ul li, .nav li a {
+    width: 100%;
+  }
+  /* line 123, ../scss/menu.scss */
+  .nav .show-menu {
     display: block;
-    color: #111;
-    padding: 5px 5px 5px 32px;
-    text-align: left;
-    font-size: 1.2em;
-  }
-  /* line 74, ../scss/menu.scss */
-  .nav .current {
-    display: block;
-    /* show only current <li> item */
-  }
-  /* line 76, ../scss/menu.scss */
-  .nav .current a {
-    background: none;
-    color: #111;
-    font-size: 1.2em;
-  }
-  /* line 84, ../scss/menu.scss */
-  .nav ul:hover {
-    background-image: none;
-  }
-  /* line 89, ../scss/menu.scss */
-  .nav ul:hover li {
-    display: block;
-    margin: 0 0 5px;
-  }
-  /* line 94, ../scss/menu.scss */
-  .nav ul:hover .current {
-    background: url(images/icon-check.png) no-repeat 10px 7px;
-  }
-  /* line 99, ../scss/menu.scss */
-  .nav .right ul {
-    left: auto;
-    right: 0;
-  }
-  /* line 105, ../scss/menu.scss */
-  .nav .center ul {
-    left: 50%;
-    margin-left: -90px;
   }
 }

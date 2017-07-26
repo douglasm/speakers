@@ -92,37 +92,37 @@ h1 a, h2 a, h3 a, h4 a, h5 a, h6 a {
 /* line 43, ../scss/base.scss */
 h1 {
   font-size: 5em;
-  line-height: 6em;
+  line-height: normal;
 }
 
 /* line 44, ../scss/base.scss */
 h2 {
   font-size: 4em;
-  line-height: 4.8em;
+  line-height: normal;
 }
 
 /* line 45, ../scss/base.scss */
 h3 {
   font-size: 3em;
-  line-height: 3.6em;
+  line-height: normal;
 }
 
 /* line 46, ../scss/base.scss */
 h4 {
   font-size: 2em;
-  line-height: 2.4em;
+  line-height: normal;
 }
 
 /* line 47, ../scss/base.scss */
 h5 {
   font-size: 1.5em;
-  line-height: 1.8em;
+  line-height: normal;
 }
 
 /* line 48, ../scss/base.scss */
 h6 {
   font-size: 1.1em;
-  line-height: 1.2em;
+  line-height: normal;
 }
 
 /* line 50, ../scss/base.scss */
